@@ -3,7 +3,7 @@ const app = express();
 
 var os = require("os");
 
-app.use(express.static("public"));
+app.use(express.static(os.hostname()+"/public"));
 
 app.get("/", (request, response) => {
   response.send(os.hostname());
