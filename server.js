@@ -1,7 +1,5 @@
 const express = require("express");
 const app = express();
-const fs = require('fs')
-const os = require("os");
 
 app.use(express.static("public"));
 
