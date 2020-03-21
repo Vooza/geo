@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
+const fs = require('fs')
+const os = require("os");
 
-var os = require("os");
+app.use(express.static("public"));
 
-app.use(express.static(os.hostname()+"/public"));
-
-app.get("/", (request, response) => {
-  response.send(os.hostname());
+app.get("*", (request, response) => {
+	request.send(os.hostname());
 });
 
 const listener = app.listen(process.env.PORT, () => {
