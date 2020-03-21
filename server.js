@@ -5,8 +5,8 @@ const os = require("os");
 
 app.use(express.static("public"));
 
-app.get("*", (request, response) => {
-	request.send(os.hostname());
+app.get("/", (request, response) => {
+	request.send("socknet");
 });
 
 const listener = app.listen(process.env.PORT, () => {
